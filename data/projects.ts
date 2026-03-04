@@ -97,7 +97,7 @@ export const PROJECTS_DATA: Record<ProjectId, ProjectData> = {
           {
             title: "성과",
             content: ["Lighthouse 접근성 점수 87점 → 100점 달성: 버튼 접근성, 폼 레이블 연결 등 3가지 항목 개선을 통해 모든 접근성 감사 항목 통과"],
-            testImg: ['/lighthouse-before.PNG', '/lighthouse-after.PNG']
+            testImg: ['/lighthouse-before.png', '/lighthouse-after.png']
           },
           {
             title: "느낀점",
