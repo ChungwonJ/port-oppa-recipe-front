@@ -1,6 +1,3 @@
-import React from 'react'
-import styles from "../../styles/portfolio.module.scss";
-
 type Props = {
   title: string;
 };

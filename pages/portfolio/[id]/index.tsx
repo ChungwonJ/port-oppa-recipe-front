@@ -24,20 +24,11 @@ export default function ProjectDetailPage() {
 
   return (
     <main className={styles.container}>
-      {/* <nav className={styles.navigation}>
-        <BackButton label="뒤로가기" />
-      </nav> */}
       <header className={styles.header}>
         <h1>{project.name}</h1>
       </header>
 
       <SectionTitle title="Project" />
-      <div className={styles.imageGrid}>
-        <img
-          src={project.architectureImage}
-          alt={`${project.name} 전체 아키텍처`}
-        />
-      </div>
 
       {project.projectSrc && project.projectSrc.length > 0 && (
         <ul>
@@ -65,43 +56,19 @@ export default function ProjectDetailPage() {
         />
       ))}
 
-      <SectionTitle title="Case Study : React.memo를 통한 렌더링 성능 최적화" />
-
-      {project.caseArchitectureImage && (
-        <div className={styles.imageGrid}>
-          <img
-            src={project.caseArchitectureImage}
-            alt={`${project.name} 아키텍처`}
-          />
-        </div>
-      )}
-
-      {project.architectureSrc && project.architectureSrc.length > 0 && (
-        <ul>
-          {project.architectureSrc.map((link, linkIndex) => (
-            <React.Fragment key={`arch-link-${linkIndex}`}>
-              {link.src.map((url, urlIndex) => (
-                <li key={`${linkIndex}-${urlIndex}`} className={styles.src}>
-                  {link.title}
-                  <Link href={url} target="_blank" rel="noopener noreferrer">
-                    {url}
-                  </Link>
-                </li>
-              ))}
-            </React.Fragment>
+      {project.caseStudy.map((caseItem, caseIndex) => (
+        <React.Fragment key={`case-${caseIndex}`}>
+          <SectionTitle title={caseItem.sectionTitle} />
+          {caseItem.blocks.map((block, blockIndex) => (
+            <ListBlock
+              key={`block-${blockIndex}`}
+              title={block.title}
+              content={block.content}
+              image={block.testImg}
+              items={block.items}
+            />
           ))}
-        </ul>
-      )}
-
-      {/* caseStudy 렌더링 */}
-      {project.caseStudy.map((item, index) => (
-        <ListBlock
-          key={`case-${index}`}
-          title={item.title}
-          content={item.content}
-          image={item.testImg}
-          items={item.items}
-        />
+        </React.Fragment>
       ))}
     </main>
   );

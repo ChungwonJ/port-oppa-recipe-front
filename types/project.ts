@@ -9,11 +9,16 @@ export interface ProjectLink {
   src: string[];
 }
 
-export interface CaseStudyItem {
+export interface CaseStudyBlock {
   title: string;
   content?: string[];
   items?: string[];
   testImg?: string[];
+}
+
+export interface CaseStudyGroup {
+  sectionTitle: string;
+  blocks: CaseStudyBlock[];
 }
 
 export interface ProjectData {
@@ -23,8 +28,8 @@ export interface ProjectData {
   projectSrc?: ProjectLink[];
   templateBlocks: ProjectSection[];
   caseArchitectureImage?: string;
-  architectureSrc?: ProjectLink[]; 
-  caseStudy: CaseStudyItem[];
+  architectureSrc?: ProjectLink[];
+  caseStudy: CaseStudyGroup[];  
 }
 
-export type ProjectId = "opparecipe" | "opparecipe";
+export type ProjectId = "opparecipe"; 
