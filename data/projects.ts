@@ -40,19 +40,19 @@ export const PROJECTS_DATA: Record<ProjectId, ProjectData> = {
       }
     ],
     caseArchitectureImage: '/es-architecture.png',
-    architectureSrc: [
-      {
-        title: "깃허브(RecipeItem) : ",
-        src: ["https://github.com/ChungwonJ/oppa-recipe-front/blob/main/__tests__/RecipeItem.test.tsx"]
-      },
-      {
-        title: "깃허브(TestPage) : ",
-        src: ["https://github.com/ChungwonJ/oppa-recipe-front/blob/main/components/TestPage.tsx"]
-      }
-    ],
     caseStudy: [
       {
         sectionTitle: "Case Study 1 : React.memo를 통한 렌더링 성능 최적화",
+        architectureSrc: [
+          {
+            title: "깃허브(RecipeItem) : ",
+            src: ["https://github.com/ChungwonJ/oppa-recipe-front/blob/main/__tests__/RecipeItem.test.tsx"]
+          },
+          {
+            title: "깃허브(TestPage) : ",
+            src: ["https://github.com/ChungwonJ/oppa-recipe-front/blob/main/components/TestPage.tsx"]
+          }
+        ],
         blocks: [
           {
             title: "문제 : 저장레시피 리스트 증가시 시각적인 버벅임 현상우려",

@@ -59,6 +59,24 @@ export default function ProjectDetailPage() {
       {project.caseStudy.map((caseItem, caseIndex) => (
         <React.Fragment key={`case-${caseIndex}`}>
           <SectionTitle title={caseItem.sectionTitle} />
+
+          {caseItem.architectureSrc && caseItem.architectureSrc.length > 0 && (
+            <ul>
+              {caseItem.architectureSrc.map((link, linkIndex) => (
+                <React.Fragment key={`arch-link-${linkIndex}`}>
+                  {link.src.map((url, urlIndex) => (
+                    <li key={`${linkIndex}-${urlIndex}`} className={styles.src}>
+                      {link.title}
+                      <Link href={url} target="_blank" rel="noopener noreferrer">
+                        {url}
+                      </Link>
+                    </li>
+                  ))}
+                </React.Fragment>
+              ))}
+            </ul>
+          )}
+
           {caseItem.blocks.map((block, blockIndex) => (
             <ListBlock
               key={`block-${blockIndex}`}

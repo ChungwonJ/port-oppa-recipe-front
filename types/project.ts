@@ -19,6 +19,10 @@ export interface CaseStudyBlock {
 export interface CaseStudyGroup {
   sectionTitle: string;
   blocks: CaseStudyBlock[];
+  architectureSrc?: {
+    title: string;
+    src: string[];
+  }[];
 }
 
 export interface ProjectData {
